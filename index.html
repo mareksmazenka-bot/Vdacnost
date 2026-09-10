@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#FDF7F0">
+<meta name="theme-color" content="#F8F7EC">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Vďačnosť">
@@ -14,19 +14,19 @@
 <title>Vďačnosť</title>
 <style>
   :root{
-    --bg:#FDF7F0;
-    --bg-2:#F7EDE2;
+    --bg:#F8F7EC;
+    --bg-2:#EAF0DE;
     --card:#FFFFFF;
-    --ink:#3B322C;
-    --ink-2:#6B5E54;
-    --muted:#A09184;
-    --line:#EFE2D4;
-    --accent:#DC8A3F;
-    --accent-dark:#C4762E;
-    --accent-soft:#FDF0DE;
+    --ink:#2E3B2A;
+    --ink-2:#5B6B52;
+    --muted:#96A38A;
+    --line:#E1E8D2;
+    --accent:#E0A73E;
+    --accent-dark:#C08A24;
+    --accent-soft:#FBF0D6;
     --green:#3FA76A;
     --green-dark:#2F8B56;
-    --green-soft:#E4F3EA;
+    --green-soft:#E3F3E7;
     --red:#C9584F;
     --radius:18px;
     --shadow:0 1px 2px rgba(90,60,30,.05), 0 6px 18px rgba(90,60,30,.06);
@@ -70,7 +70,7 @@
   /* ---------- Progress dots ---------- */
   .progress-wrap{display:flex; align-items:center; justify-content:space-between; gap:12px; margin:14px 2px 2px}
   .dots{display:flex; gap:7px}
-  .dot{width:11px; height:11px; border-radius:50%; background:#E7DAC9; transition:all .3s ease}
+  .dot{width:11px; height:11px; border-radius:50%; background:#DCE6CC; transition:all .3s ease}
   .dot.on{background:var(--green); box-shadow:0 0 0 3px var(--green-soft)}
   .dot.extra{background:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
   .count{font-size:14px; color:var(--ink-2); font-weight:600; white-space:nowrap}
@@ -83,13 +83,13 @@
     box-shadow:var(--shadow); border:1.5px solid transparent;
     transition:border-color .2s ease, background .2s ease;
   }
-  .slot.pending{background:#FBF5EE; box-shadow:none; border:1.5px dashed var(--line)}
+  .slot.pending{background:#F1F5E6; box-shadow:none; border:1.5px dashed var(--line)}
   .slot.active{border-color:var(--accent); background:#fff}
   .slot.done{cursor:pointer}
 
   .light{
     flex:0 0 auto; width:14px; height:14px; border-radius:50%;
-    background:#E7DAC9; margin-top:4px; transition:all .35s cubic-bezier(.2,.9,.3,1.4);
+    background:#DCE6CC; margin-top:4px; transition:all .35s cubic-bezier(.2,.9,.3,1.4);
   }
   .slot.done .light{background:var(--green); box-shadow:0 0 0 4px var(--green-soft), 0 0 10px rgba(63,167,106,.45)}
   .slot.active .light{background:var(--accent-soft); box-shadow:0 0 0 3px var(--accent-soft)}
@@ -120,7 +120,7 @@
     flex:1; height:42px; border-radius:21px; background:var(--green); color:#fff;
     font-weight:650; display:grid; place-items:center; transition:all .18s ease;
   }
-  .btn-confirm[disabled]{background:#E7DAC9; color:#fff; cursor:default}
+  .btn-confirm[disabled]{background:#DCE6CC; color:#fff; cursor:default}
   .btn-confirm:not([disabled]):active{transform:scale(.97); background:var(--green-dark)}
   .mini{font-size:13px; color:var(--muted); text-align:center; margin-top:10px}
 
@@ -128,7 +128,7 @@
   .add-more{
     display:flex; align-items:center; justify-content:center; gap:8px;
     width:100%; padding:13px; margin-top:12px; border-radius:var(--radius);
-    border:1.5px dashed var(--line); color:var(--accent-dark); font-weight:600; background:#FBF5EE;
+    border:1.5px dashed var(--line); color:var(--accent-dark); font-weight:600; background:#F1F5E6;
   }
   .add-more:active{transform:scale(.99)}
   .done-banner{
@@ -169,7 +169,7 @@
     font-size:13.5px; color:var(--ink-2); background:var(--bg-2); position:relative;
   }
   .cal-day.blank{background:transparent}
-  .cal-day.future{background:transparent; color:#D6C8B9}
+  .cal-day.future{background:transparent; color:#C4CDB2}
   .cal-day.partial{background:var(--accent-soft); color:var(--accent-dark); font-weight:600}
   .cal-day.full{background:var(--green); color:#fff; font-weight:650}
   .cal-day.today{outline:2px solid var(--accent); outline-offset:1px}
@@ -182,7 +182,7 @@
   .row:last-child{border-bottom:none}
   .row .t{font-size:15px}
   .row .d{font-size:12.5px; color:var(--muted); margin-top:2px}
-  .switch{width:50px; height:30px; border-radius:15px; background:#E2D6C7; position:relative; flex:0 0 auto; transition:background .22s}
+  .switch{width:50px; height:30px; border-radius:15px; background:#D8E0C8; position:relative; flex:0 0 auto; transition:background .22s}
   .switch::after{content:""; position:absolute; top:3px; left:3px; width:24px; height:24px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.2); transition:transform .22s}
   .switch.on{background:var(--green)}
   .switch.on::after{transform:translateX(20px)}
@@ -208,7 +208,7 @@
 
   /* ---------- Sheet ---------- */
   .backdrop{
-    position:fixed; inset:0; background:rgba(50,35,20,.38); z-index:40;
+    position:fixed; inset:0; background:rgba(28,38,22,.4); z-index:40;
     display:flex; align-items:flex-end; justify-content:center;
     opacity:0; pointer-events:none; transition:opacity .25s ease;
   }
@@ -219,7 +219,7 @@
     transform:translateY(100%); transition:transform .28s cubic-bezier(.2,.8,.3,1);
   }
   .backdrop.on .sheet{transform:none}
-  .grabber{width:38px; height:4px; border-radius:2px; background:#E2D6C7; margin:8px auto 14px}
+  .grabber{width:38px; height:4px; border-radius:2px; background:#D8E0C8; margin:8px auto 14px}
   .sheet h3{margin:0 0 2px; font-size:18px}
   .sheet .when{color:var(--ink-2); font-size:13px; margin-bottom:14px}
   .sheet-item{background:var(--card); border-radius:14px; padding:13px; margin-bottom:9px; box-shadow:var(--shadow); display:flex; gap:11px; align-items:flex-start}
@@ -233,12 +233,74 @@
   /* ---------- Toast ---------- */
   #toast{
     position:fixed; left:50%; bottom:calc(84px + var(--safe-b)); transform:translate(-50%,14px);
-    background:#41372F; color:#fff; padding:11px 18px; border-radius:24px; font-size:14px;
+    background:#33402C; color:#fff; padding:11px 18px; border-radius:24px; font-size:14px;
     z-index:60; opacity:0; pointer-events:none; transition:all .25s ease; max-width:88%; text-align:center;
   }
   #toast.on{opacity:1; transform:translate(-50%,0)}
 
   .empty{text-align:center; color:var(--muted); font-size:14px; padding:22px 10px}
+
+  /* ---------- Náhodná spomienka ---------- */
+  .memory-card{
+    margin-top:14px; padding:16px; border-radius:var(--radius);
+    background:linear-gradient(135deg,#F3F0DE,#EDF2DE); border:1px solid var(--line); position:relative;
+  }
+  .memory-head{display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; color:var(--accent-dark); text-transform:uppercase; letter-spacing:.03em}
+  .memory-date{font-size:12px; color:var(--muted); margin-top:2px}
+  .memory-text{margin-top:10px; font-size:15.5px; line-height:1.45}
+  .memory-actions{display:flex; gap:8px; margin-top:12px}
+  .memory-shuffle{padding:8px 13px; border-radius:11px; background:#fff; color:var(--ink-2); font-size:13px; font-weight:600; display:flex; align-items:center; gap:6px}
+  .memory-close{
+    position:absolute; top:12px; right:12px; width:28px; height:28px; border-radius:50%;
+    display:grid; place-items:center; color:var(--muted); background:rgba(255,255,255,.6);
+  }
+
+  /* ---------- Mesačný súhrn ---------- */
+  .msum-head{font-weight:650; font-size:15px; margin-bottom:10px}
+  .msum-row{display:flex; justify-content:space-between; font-size:14px; padding:6px 0; border-bottom:1px solid var(--line)}
+  .msum-row:last-of-type{border-bottom:none}
+  .msum-row .l{color:var(--ink-2)}
+  .msum-row .v{font-weight:650}
+  .msum-quote{
+    margin-top:12px; padding:12px 14px; border-radius:14px; background:var(--bg-2);
+    font-size:14px; font-style:italic; line-height:1.45;
+  }
+  .msum-quote .qdate{display:block; font-style:normal; font-size:11.5px; color:var(--muted); margin-top:5px}
+  .msum-words{display:flex; flex-wrap:wrap; gap:7px; margin-top:12px}
+  .msum-chip{background:var(--accent-soft); color:var(--accent-dark); font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:20px}
+  .msum-empty{color:var(--muted); font-size:14px; padding:6px 0}
+  .msum-shuffle{margin-top:10px; font-size:12.5px; color:var(--ink-2); font-weight:600; display:flex; align-items:center; gap:5px}
+
+  /* ---------- Míľniky / odznaky ---------- */
+  .badge-lbl{font-size:12.5px; color:var(--muted); font-weight:650; margin-bottom:8px}
+  .badges{display:flex; gap:9px; flex-wrap:wrap}
+  .badge{
+    width:52px; height:52px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:var(--bg-2); color:var(--muted); font-size:12px; font-weight:700; gap:0;
+  }
+  .badge.on{background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff; box-shadow:0 3px 10px rgba(192,138,36,.35)}
+  .badge .n{font-size:13.5px; line-height:1}
+  .badge .u{font-size:8.5px; opacity:.85; margin-top:1px}
+
+  /* ---------- Oslava míľnika ---------- */
+  .celebrate-backdrop{
+    position:fixed; inset:0; background:rgba(28,38,22,.45); z-index:70;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
+  }
+  .celebrate-backdrop.on{opacity:1; pointer-events:auto}
+  .celebrate-card{
+    background:#fff; border-radius:22px; padding:30px 26px; text-align:center; max-width:320px;
+    transform:scale(.85); transition:transform .3s cubic-bezier(.2,.9,.3,1.4);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+  }
+  .celebrate-backdrop.on .celebrate-card{transform:scale(1)}
+  .celebrate-emoji{font-size:46px; line-height:1}
+  .celebrate-title{font-size:19px; font-weight:750; margin-top:10px; color:var(--ink)}
+  .celebrate-sub{font-size:14px; color:var(--ink-2); margin-top:6px; line-height:1.45}
+  .celebrate-btn{
+    margin-top:18px; padding:11px 26px; border-radius:20px; background:var(--green); color:#fff; font-weight:650;
+  }
 </style>
 </head>
 <body>
@@ -257,6 +319,7 @@
       </div>
       <ol class="slots" id="slots"></ol>
       <div id="todayFooter"></div>
+      <div id="memoryCard"></div>
     </section>
 
     <!-- ============ PREHĽAD ============ -->
@@ -307,28 +370,34 @@
           <span><i class="swatch" style="background:var(--bg-2)"></i>prázdne</span>
         </div>
       </div>
+
+      <div class="card" id="monthSummaryCard"></div>
+
+      <div class="card">
+        <h2>Míľniky</h2>
+        <div class="badge-group">
+          <div class="badge-lbl">Séria dní</div>
+          <div class="badges" id="badgesStreak"></div>
+        </div>
+        <div class="badge-group" style="margin-top:14px">
+          <div class="badge-lbl">Vďačnosti spolu</div>
+          <div class="badges" id="badgesTotal"></div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ NASTAVENIA ============ -->
     <section class="view" id="v-set">
       <div class="card">
-        <h2>Pripomienka</h2>
+        <h2>Spomienky</h2>
         <div class="row">
           <div>
-            <div class="t">Denná pripomienka</div>
-            <div class="d" id="permHint">Upozorní ťa, ak ešte nemáš 5 vďačností</div>
+            <div class="t">Náhodná spomienka</div>
+            <div class="d">Občas ti pripomenie starší záznam na obrazovke Dnes</div>
           </div>
-          <button class="switch" id="remSwitch" aria-label="Zapnúť pripomienku"></button>
+          <button class="switch" id="memSwitch" aria-label="Zapnúť spomienky"></button>
         </div>
-        <div class="row">
-          <div>
-            <div class="t">Čas pripomienky</div>
-            <div class="d">Každý deň v tomto čase</div>
-          </div>
-          <input type="time" id="remTime" value="21:00">
-        </div>
-        <button class="btn-line" id="testNotif">Vyskúšať notifikáciu</button>
-        <div class="note" id="remNote"></div>
+        <div class="note" style="margin-top:0">Zobrazí sa nanajvýš raz za pár dní a vždy ju vieš preskočiť krížikom.</div>
       </div>
 
       <div class="card">
@@ -367,6 +436,14 @@
 </div>
 
 <div class="backdrop" id="backdrop"><div class="sheet" id="sheet"></div></div>
+<div class="celebrate-backdrop" id="celebrateBackdrop">
+  <div class="celebrate-card">
+    <div class="celebrate-emoji" id="celebrateEmoji">🎉</div>
+    <div class="celebrate-title" id="celebrateTitle"></div>
+    <div class="celebrate-sub" id="celebrateSub"></div>
+    <button class="celebrate-btn" id="celebrateClose">Pokračovať</button>
+  </div>
+</div>
 <div id="toast"></div>
 
 <script>
@@ -400,7 +477,10 @@ function escapeHtml(s){ return s.replace(/[&<>"']/g, function(c){ return {'&':'&
 /* ============================================================
    Dáta
    ============================================================ */
-var state = { days:{}, settings:{ reminderEnabled:false, reminderTime:'21:00', lastNotified:'' } };
+var state = { days:{}, settings:{
+  memoryEnabled:true, memoryLastShownDay:'', memoryDismissedDay:'', memoryChoice:null,
+  celebrated:[]
+} };
 
 function load(){
   try{
@@ -626,6 +706,8 @@ function renderToday(){
 
   var ta = document.querySelector('textarea.entry');
   if(ta){ autoGrow(ta); syncConfirmBtn(); }
+
+  renderMemoryCard();
 }
 
 function plural(n, one, few, many){
@@ -727,6 +809,7 @@ function confirmEntry(editId){
     if(lights.length) lights[lights.length-1].classList.add('pop');
     var after = countOf(k);
     if(after === GOAL){ toast('Krásne — dnešok máš splnený!'); }
+    checkMilestones();
     setTimeout(focusEntry, 60);
   }
 }
@@ -795,6 +878,8 @@ function renderStats(){
   setBar('l30Txt','l30Bar', rangeStats(addDays(now,-29), now));
 
   renderCalendar();
+  renderMonthSummary();
+  renderBadges();
 }
 
 /* ---------- Kalendár ---------- */
@@ -920,85 +1005,270 @@ function renderSheet(k){
 }
 
 /* ============================================================
-   Nastavenia + pripomienky
+   Nastavenia
    ============================================================ */
-var reminderTimer = null;
-
-function notificationsSupported(){ return ('Notification' in window); }
-
 function renderSettings(){
-  var sw = $('remSwitch');
-  sw.classList.toggle('on', !!state.settings.reminderEnabled);
-  $('remTime').value = state.settings.reminderTime;
-
-  var note = $('remNote');
-  if(!notificationsSupported()){
-    note.innerHTML = 'Tento prehliadač nepodporuje notifikácie.';
-  }else if(Notification.permission === 'denied'){
-    note.innerHTML = '<b>Notifikácie sú zablokované.</b> Povoľ ich v Chrome: ikonka zámku vedľa adresy → Povolenia → Upozornenia.';
-  }else{
-    note.innerHTML = 'Pripomienka príde, len ak máš appku spustenú alebo na pozadí. Pre stopercentnú istotu si nastav aj budík v telefóne.';
-  }
+  var sw = $('memSwitch');
+  sw.classList.toggle('on', !!state.settings.memoryEnabled);
   $('verLine').textContent = 'Verzia ' + VERSION;
 }
 
-function toggleReminder(){
-  if(state.settings.reminderEnabled){
-    state.settings.reminderEnabled = false; save(); renderSettings(); scheduleReminder();
-    toast('Pripomienka vypnutá');
-    return;
-  }
-  if(!notificationsSupported()){ toast('Tento prehliadač nepodporuje notifikácie'); return; }
-  if(Notification.permission === 'granted'){
-    state.settings.reminderEnabled = true; save(); renderSettings(); scheduleReminder();
-    toast('Pripomienka zapnutá na ' + state.settings.reminderTime);
-    return;
-  }
-  Notification.requestPermission().then(function(p){
-    if(p === 'granted'){
-      state.settings.reminderEnabled = true; save(); scheduleReminder();
-      toast('Pripomienka zapnutá na ' + state.settings.reminderTime);
-    }else{
-      toast('Bez povolenia notifikácií to nepôjde');
-    }
-    renderSettings();
-  }).catch(function(){ toast('Povolenie sa nepodarilo získať'); });
+function toggleMemory(){
+  state.settings.memoryEnabled = !state.settings.memoryEnabled;
+  save(); renderSettings();
+  toast(state.settings.memoryEnabled ? 'Spomienky zapnuté' : 'Spomienky vypnuté');
+  if(view === 'today') renderMemoryCard();
 }
 
-function reminderTargetToday(){
-  var p = (state.settings.reminderTime || '21:00').split(':');
-  var n = new Date();
-  return new Date(n.getFullYear(), n.getMonth(), n.getDate(), +p[0]||0, +p[1]||0, 0, 0);
+/* ============================================================
+   Náhodná spomienka
+   ============================================================ */
+function allPastEntries(){
+  var tk = today(), out = [];
+  for(var k in state.days){
+    if(k >= tk) continue;
+    var list = state.days[k];
+    for(var i=0;i<list.length;i++) out.push({ dayKey:k, entry:list[i] });
+  }
+  return out;
 }
-function scheduleReminder(){
-  clearTimeout(reminderTimer); reminderTimer = null;
-  if(!state.settings.reminderEnabled) return;
-  if(!notificationsSupported() || Notification.permission !== 'granted') return;
-  var now = new Date(), target = reminderTargetToday();
-  if(target <= now) target = new Date(target.getTime() + 86400000);
-  var delay = Math.min(target - now, 2147483000);
-  reminderTimer = setTimeout(function(){ maybeNotify(); scheduleReminder(); }, delay);
+function pickMemory(excludeId){
+  var pool = allPastEntries();
+  if(excludeId) pool = pool.filter(function(p){ return p.entry.id !== excludeId; });
+  if(!pool.length) pool = allPastEntries();
+  if(!pool.length) return null;
+  return pool[Math.floor(Math.random()*pool.length)];
 }
-function maybeNotify(){
-  if(!state.settings.reminderEnabled) return;
-  if(!notificationsSupported() || Notification.permission !== 'granted') return;
-  var k = today();
-  if(state.settings.lastNotified === k) return;
-  if(new Date() < reminderTargetToday()) return;
-  var n = countOf(k);
-  if(n >= GOAL) return;
-  fireNotification(
-    'Za čo si dnes vďačný?',
-    n === 0 ? 'Ešte si dnes nič nezapísal. Stačí 5 vecí.'
-            : 'Máš ' + n + ' z 5. Chýba už len ' + (GOAL-n) + '.'
-  );
-  state.settings.lastNotified = k; save();
+function memoryDateLabel(k){
+  var d = fromKey(k);
+  var t = new Date(); var diff = Math.round((new Date(key(t)) - new Date(k)) / 86400000);
+  if(diff === 1) return 'Včera';
+  if(diff < 7) return 'Pred ' + diff + ' ' + plural(diff,'dňom','dňami','dňami');
+  return d.getDate()+'. '+MONTHS_GEN[d.getMonth()]+' '+d.getFullYear();
 }
-function fireNotification(title, body){
-  try{
-    var n = new Notification(title, { body: body, icon: 'icon-192.png', badge: 'icon-192.png', tag:'vdacnost-daily' });
-    n.onclick = function(){ try{ window.focus(); }catch(e){} n.close(); };
-  }catch(e){ /* niektoré prehliadače vyžadujú service worker */ }
+function renderMemoryCard(){
+  var host = $('memoryCard'); if(!host) return;
+  host.innerHTML = '';
+  if(!state.settings.memoryEnabled) return;
+  var tk = today();
+
+  if(state.settings.memoryDismissedDay === tk) return;
+
+  var shownDay = state.settings.memoryLastShownDay;
+  var daysSince = shownDay ? Math.round((new Date(tk) - new Date(shownDay)) / 86400000) : 999;
+  var showingNow = (shownDay === tk); /* už dnes zobrazené, len znova vykresľujeme */
+
+  if(!showingNow && daysSince < 3) return;
+
+  var pick = null;
+  if(showingNow && state.settings.memoryChoice){
+    var list = state.days[state.settings.memoryChoice.dayKey] || [];
+    var found = list.find(function(e){ return e.id === state.settings.memoryChoice.entryId; });
+    if(found) pick = { dayKey: state.settings.memoryChoice.dayKey, entry: found };
+  }
+  if(!pick) pick = pickMemory();
+  if(!pick) return;
+
+  if(!showingNow){
+    state.settings.memoryLastShownDay = tk;
+    state.settings.memoryChoice = { dayKey: pick.dayKey, entryId: pick.entry.id };
+    save();
+  }
+
+  var card = el('div','memory-card');
+  var head = el('div','memory-head');
+  head.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Spomienka</span>';
+  card.appendChild(head);
+  var dl = el('div','memory-date'); dl.textContent = memoryDateLabel(pick.dayKey);
+  card.appendChild(dl);
+  var tx = el('div','memory-text'); tx.textContent = '„' + pick.entry.text + '“';
+  card.appendChild(tx);
+
+  var actions = el('div','memory-actions');
+  var shuf = el('button','memory-shuffle');
+  shuf.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4M3 7h8a4 4 0 0 1 4 4M7 21l-4-4 4-4M21 17h-8a4 4 0 0 1-4-4"/></svg><span>Iná spomienka</span>';
+  shuf.addEventListener('click', function(){
+    var next = pickMemory(pick.entry.id);
+    if(next){
+      state.settings.memoryChoice = { dayKey: next.dayKey, entryId: next.entry.id };
+      save(); renderMemoryCard();
+    }
+  });
+  actions.appendChild(shuf);
+  card.appendChild(actions);
+
+  var close = el('button','memory-close');
+  close.setAttribute('aria-label','Skryť spomienku');
+  close.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+  close.addEventListener('click', function(){
+    state.settings.memoryDismissedDay = tk; save(); renderMemoryCard();
+  });
+  card.appendChild(close);
+
+  host.appendChild(card);
+}
+
+/* ============================================================
+   Míľniky
+   ============================================================ */
+var STREAK_MILESTONES = [7,14,30,60,100,200,365];
+var TOTAL_MILESTONES  = [10,25,50,100,250,500,1000];
+
+function checkMilestones(){
+  var cs = currentStreak();
+  var total = 0; for(var k in state.days) total += state.days[k].length;
+  var celebrated = state.settings.celebrated || (state.settings.celebrated = []);
+  var newly = null;
+
+  for(var i=0;i<STREAK_MILESTONES.length;i++){
+    var m = STREAK_MILESTONES[i], key2 = 's'+m;
+    if(cs >= m && celebrated.indexOf(key2) === -1){
+      celebrated.push(key2);
+      if(!newly) newly = { emoji:'🔥', title: m + ' ' + plural(m,'deň','dni','dní') + ' v sérii!', sub:'Držíš sa vďačnosti už ' + m + ' ' + plural(m,'deň','dni','dní') + ' za sebou.' };
+    }
+  }
+  for(var j=0;j<TOTAL_MILESTONES.length;j++){
+    var mt = TOTAL_MILESTONES[j], key3 = 't'+mt;
+    if(total >= mt && celebrated.indexOf(key3) === -1){
+      celebrated.push(key3);
+      if(!newly) newly = { emoji:'🌿', title: mt + ' ' + plural(mt,'vďačnosť','vďačnosti','vďačností'), sub:'Spolu si si zapísal už ' + mt + ' ' + plural(mt,'vďačnosť','vďačnosti','vďačností') + '.' };
+    }
+  }
+  if(newly){ save(); showCelebration(newly); }
+}
+
+function showCelebration(m){
+  var bd = $('celebrateBackdrop');
+  $('celebrateEmoji').textContent = m.emoji;
+  $('celebrateTitle').textContent = m.title;
+  $('celebrateSub').textContent = m.sub;
+  bd.classList.add('on');
+}
+function hideCelebration(){ $('celebrateBackdrop').classList.remove('on'); }
+
+function renderBadges(){
+  var cs = bestStreak();
+  var total = 0; for(var k in state.days) total += state.days[k].length;
+
+  var sHost = $('badgesStreak'); sHost.innerHTML='';
+  STREAK_MILESTONES.forEach(function(m){
+    var b = el('div','badge' + (cs>=m ? ' on' : ''));
+    var n = el('div','n'); n.textContent = m; b.appendChild(n);
+    var u = el('div','u'); u.textContent = plural(m,'deň','dni','dní'); b.appendChild(u);
+    sHost.appendChild(b);
+  });
+  var tHost = $('badgesTotal'); tHost.innerHTML='';
+  TOTAL_MILESTONES.forEach(function(m){
+    var b = el('div','badge' + (total>=m ? ' on' : ''));
+    var n = el('div','n'); n.textContent = m; b.appendChild(n);
+    var u = el('div','u'); u.textContent = 'vďač.'; b.appendChild(u);
+    tHost.appendChild(b);
+  });
+}
+
+/* ============================================================
+   Mesačný súhrn
+   ============================================================ */
+var STOPWORDS = ['ale','alebo','ani','aby','ako','až','bez','bol','bola','bolo','boli','byť','bude','budem',
+  'cez','čo','či','ešte','iba','ich','ja','je','jeho','jej','k','ku','keď','kde','ktorá','ktoré','ktorý','ktorí',
+  'len','ma','mať','mi','mne','mnou','môj','moja','moje','my','na','nad','nám','náš','nie','nič','no','o','od',
+  'po','pod','pre','pri','s','sa','so','si','svoj','svoje','svoju','ta','tak','takže','teda','ten','tento','tie',
+  'tieto','to','toto','tu','tú','ty','u','už','v','vo','veľmi','viac','za','zo','že','som','sme','ste','sú','aj',
+  'toho','tomu','tom','tejto','tej','ktorej','pretože','keby','ešte','celý','celá','celé','bol','mám','máš','má',
+  'máme','máte','majú','všetko','všetci','dnes','dnešný','dnešnú','dnešné'];
+
+function tokenize(text){
+  return (text.toLowerCase().match(/[a-zá-žäôň]+/gi) || []).filter(function(w){
+    return w.length >= 4 && STOPWORDS.indexOf(w) === -1;
+  });
+}
+
+function monthlyStats(year, month){
+  var now = new Date(), tk = key(now);
+  var lastDay = new Date(year, month+1, 0).getDate();
+  var isCurrent = (year===now.getFullYear() && month===now.getMonth());
+  var daysSoFar = isCurrent ? now.getDate() : lastDay;
+
+  var total = 0, completedDays = 0, samples = [], words = {};
+  var bestRun = 0, curRun = 0;
+
+  for(var day=1; day<=daysSoFar; day++){
+    var d = new Date(year, month, day);
+    var k = key(d);
+    var list = entriesOf(k);
+    if(list.length){
+      total += list.length;
+      list.forEach(function(e){
+        samples.push({ dayKey:k, entry:e });
+        tokenize(e.text).forEach(function(w){ words[w] = (words[w]||0) + 1; });
+      });
+    }
+    if(list.length >= GOAL){ completedDays++; curRun++; if(curRun>bestRun) bestRun=curRun; }
+    else { curRun = 0; }
+  }
+
+  var topWords = Object.keys(words).filter(function(w){ return words[w] >= 2; })
+    .sort(function(a,b){ return words[b]-words[a]; }).slice(0,6);
+
+  return { total:total, completedDays:completedDays, daysSoFar:daysSoFar, bestRun:bestRun, samples:samples, topWords:topWords.map(function(w){ return {w:w, c:words[w]}; }) };
+}
+
+var monthSummaryQuote = null;
+function renderMonthSummary(){
+  var host = $('monthSummaryCard'); if(!host) return;
+  var st = monthlyStats(calYear, calMonth);
+  host.innerHTML = '';
+
+  var h = el('h2'); h.textContent = 'Mesačný súhrn — ' + MONTHS_NOM[calMonth] + ' ' + calYear;
+  host.appendChild(h);
+
+  if(!st.total){
+    var e = el('div','msum-empty'); e.textContent = 'Za tento mesiac zatiaľ nemáš žiadne záznamy.';
+    host.appendChild(e);
+    return;
+  }
+
+  function row(l, v){
+    var r = el('div','msum-row');
+    var ll = el('span','l'); ll.textContent = l;
+    var vv = el('span','v'); vv.textContent = v;
+    r.appendChild(ll); r.appendChild(vv);
+    host.appendChild(r);
+  }
+  row('Splnené dni', st.completedDays + ' z ' + st.daysSoFar);
+  row('Vďačností spolu', st.total);
+  row('Najdlhšia séria v mesiaci', st.bestRun + ' ' + plural(st.bestRun,'deň','dni','dní'));
+
+  if(st.topWords.length){
+    var wl = el('div','msum-words');
+    st.topWords.forEach(function(o){
+      var chip = el('span','msum-chip'); chip.textContent = o.w + ' · ' + o.c + '×';
+      wl.appendChild(chip);
+    });
+    host.appendChild(wl);
+  }
+
+  if(st.samples.length){
+    if(!monthSummaryQuote || monthSummaryQuote.month !== calMonth || monthSummaryQuote.year !== calYear){
+      var pick = st.samples[Math.floor(Math.random()*st.samples.length)];
+      monthSummaryQuote = { month:calMonth, year:calYear, dayKey:pick.dayKey, text:pick.entry.text };
+    }
+    var q = el('div','msum-quote');
+    q.innerHTML = '„' + escapeHtml(monthSummaryQuote.text) + '“<span class="qdate"></span>';
+    q.querySelector('.qdate').textContent = memoryDateLabel(monthSummaryQuote.dayKey);
+    host.appendChild(q);
+
+    var sh = el('button','msum-shuffle');
+    sh.innerHTML = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4M3 7h8a4 4 0 0 1 4 4M7 21l-4-4 4-4M21 17h-8a4 4 0 0 1-4-4"/></svg><span>Iná ukážka</span>';
+    sh.addEventListener('click', function(){
+      var pool = st.samples.filter(function(s){ return s.entry.text !== monthSummaryQuote.text; });
+      if(!pool.length) pool = st.samples;
+      var pick2 = pool[Math.floor(Math.random()*pool.length)];
+      monthSummaryQuote = { month:calMonth, year:calYear, dayKey:pick2.dayKey, text:pick2.entry.text };
+      renderMonthSummary();
+    });
+    host.appendChild(sh);
+  }
 }
 
 /* ============================================================
@@ -1027,48 +1297,33 @@ function init(){
   });
 
   $('calPrev').addEventListener('click', function(){
-    calMonth--; if(calMonth<0){ calMonth=11; calYear--; } renderCalendar();
+    calMonth--; if(calMonth<0){ calMonth=11; calYear--; } renderCalendar(); renderMonthSummary();
   });
   $('calNext').addEventListener('click', function(){
     var n = new Date();
     if(calYear===n.getFullYear() && calMonth===n.getMonth()) return;
-    calMonth++; if(calMonth>11){ calMonth=0; calYear++; } renderCalendar();
+    calMonth++; if(calMonth>11){ calMonth=0; calYear++; } renderCalendar(); renderMonthSummary();
   });
 
-  $('remSwitch').addEventListener('click', toggleReminder);
-  $('remTime').addEventListener('change', function(){
-    state.settings.reminderTime = $('remTime').value || '21:00';
-    state.settings.lastNotified = '';
-    save(); scheduleReminder();
-    toast('Pripomienka o ' + state.settings.reminderTime);
-  });
-  $('testNotif').addEventListener('click', function(){
-    if(!notificationsSupported()){ toast('Tento prehliadač nepodporuje notifikácie'); return; }
-    if(Notification.permission === 'granted'){
-      fireNotification('Vďačnosť', 'Takto bude vyzerať tvoja denná pripomienka.');
-      toast('Notifikácia odoslaná');
-    }else{
-      Notification.requestPermission().then(function(p){
-        if(p==='granted'){ fireNotification('Vďačnosť','Takto bude vyzerať tvoja denná pripomienka.'); }
-        else toast('Notifikácie nie sú povolené');
-        renderSettings();
-      });
-    }
-  });
+  $('memSwitch').addEventListener('click', toggleMemory);
 
   $('backdrop').addEventListener('click', function(ev){
     if(ev.target === $('backdrop')){ closeSheet(); renderToday(); }
   });
 
-  document.addEventListener('visibilitychange', function(){
-    if(!document.hidden){ checkDayRollover(); maybeNotify(); scheduleReminder(); }
+  $('celebrateClose').addEventListener('click', hideCelebration);
+  $('celebrateBackdrop').addEventListener('click', function(ev){
+    if(ev.target === $('celebrateBackdrop')) hideCelebration();
   });
 
-  setInterval(function(){ checkDayRollover(); maybeNotify(); }, 30000);
+  document.addEventListener('visibilitychange', function(){
+    if(!document.hidden){ checkDayRollover(); }
+  });
+
+  setInterval(checkDayRollover, 30000);
 
   setView('today');
   renderToday();
-  scheduleReminder();
 }
 
 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
